@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/biblia/')
 def bible():  # put application's code here
     pesquisa = 'João+3:16?translation=almeida'
     resposta = requests.get('https://bible-api.com/' + pesquisa)

@@ -6,11 +6,17 @@ app = Flask(__name__)
 
 @app.route('/biblia/')
 def bible():  # put application's code here
-    pesquisa = 'João+3:16?translation=almeida'
-    resposta = requests.get('https://bible-api.com/' + pesquisa)
-    livro = resposta.json()['reference']
-    verso = resposta.json()['text']
-    livro_vers = livro+' - '+verso
+#    pesquisa = 'João+3:16?translation=almeida'
+
+    livro = requests.args.get("livro" + "+")
+    capitulo = requests.args.get("capitulo" + ":")
+    versiculo = requests.args.get("versiculo")
+
+    resposta = requests.get('https://bible-api.com/' + livro + capitulo + versiculo)
+
+    retorno_livro = resposta.json()['reference']
+    retorno_verso = resposta.json()['text']
+    livro_vers = retorno_livro +' - '+ retorno_verso
 
     return render_template('search.html', livro_vers=livro_vers)
 

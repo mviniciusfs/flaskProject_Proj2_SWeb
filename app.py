@@ -4,32 +4,30 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route('/biblia/', methods=['GET', 'POST'])
-def bible():  # put application's code here
+#@app.route('/biblia/', methods=['GET', 'POST'])
+#def bible():  # put application's code here
 #    pesquisa = 'João+3:16?translation=almeida'
-    print("join1")
-    livro = requests.args.get("livro") + "+"
-    capitulo = requests.args.get("capitulo") + ":"
-    versiculo = requests.args.get("versiculo") + "?translation=almeida"
+#    livro = request.args.get("livro"+ "+")
+#    capitulo = request.args.get("capitulo" + ":")
+#    versiculo = request.args.get("versiculo" + "?translation=almeida")
 
-#    livro = requests.args.get("livro")
-#    capitulo = requests.args.get("capitulo")
-#   versiculo = requests.args.get("versiculo")
+#    join = livro + capitulo + versiculo
+#    url = 'http://bible-api.com/' + join
+#    resposta = requests.get(url)
 
-#    livro = 'joão+'
-#    capitulo = '3:'
-#    versiculo = '16?translation=almeida'
+#    print(resposta)
+#    return resposta.json()
 
-    join = livro + capitulo + versiculo
-    print("join")
-    resposta = requests.get('https://bible-api.com/' + join)
+@app.route('/searchValue/', methods=['GET'])
+def getValue():
+    livro = request.args.get("livro") + "+"
+    capitulo = request.args.get("capitulo") + ":"
+    versiculo = request.args.get("versiculo") + "?translation=almeida"
+    url = 'http://bible-api.com/' + livro + capitulo + versiculo
 
-#    resposta = requests.get('https://bible-api.com/' + pesquisa)
-
- #   retorno_livro = resposta.json()['reference']
- #   retorno_verso = resposta.json()['text']
- #   livro_vers = retorno_livro +' - '+ retorno_verso
-    return pesquisa.text
+    dados = requests.get(url)
+    dadosJson = dados.json()
+    return render_template("resp_search.html", dadosJson=dadosJson)
 
 
 @app.route('/index/')

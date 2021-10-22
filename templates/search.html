@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-  <title>Restaurant Elegant - Pingendo template</title>
-  <meta name="description" content="Free Bootstrap 4 Pingendo Elegant template for restaurant and food">
-  <meta name="keywords" content="Pingendo restaurant food elegant free template bootstrap 4">
+  <title>Projeto 2 Sistemas Web</title>
+  <meta name="description" content="Projeto Web 2 Flask">
+  <meta name="keywords" content="Projeto Web 2 Flask">
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="elegant.css" type="text/css">
@@ -32,18 +32,20 @@
           <form class="p-4 bg-dark-opaque" method="post" action="https://formspree.io/">
             <h4 class="mb-1 text-center">Pesquisa de Trecho Bíblico</h4>
             <form action="/biblia" method="get">
-                <div for class="form-group"> <label>Livro</label>
-                  <input id="livro" type="text" class="form-control" placeholder="João"> </div>
-                <div class="form-group"> <label>Capítulo</label>
-                  <input id="capitulo" type="text" class="form-control" placeholder="3"> </div>
-                <div class="form-group"> <label>Versículo</label>
-                  <input id="versiculo" type="text" class="form-control" placeholder="16 ou 14-17"> </div>
+                <div for="name" class="form-group"> <label>Livro</label>
+                  <input id="livro" name="livro" type="text" class="form-control" placeholder="João"> </div>
+                <div for="name" class="form-group"> <label>Capítulo</label>
+                  <input id="capitulo" name="capitulo" type="text" class="form-control" placeholder="3"> </div>
+                <div for="name" class="form-group"> <label>Versículo</label>
+                  <input id="versiculo" name="versiculo" type="text" class="form-control" placeholder="16 ou 14-17"> </div>
+                <div class="form-group"></div><button type="submit" class="btn mt-4 btn-block btn-outline-primary p-2
+                btn btn-outline-info" style="	box-shadow: 0px 0px 4px  black;"><b><a href="/resp_search/"> Pesquisar</a></b> </button>
             </form>
-            <div class="form-group"></div><button type="submit" class="btn mt-4 btn-block btn-outline-primary p-2
-            btn btn-outline-info" style="	box-shadow: 0px 0px 4px  black;"><b>Pesquisar</b></button>
+
           </form>
           <div class="form-group" ><label class="ml-5 pl-3">Visualizar em modo Mobile (F12)</label></div>
-        </div>
+          </div><a class="btn btn-outline-info text-light p" href="/index/">Início</a>
+          </div>
       </div>
     </div>
   </div>
@@ -53,30 +55,6 @@
   <!-- Carousel reviews -->
   <!-- Carousel venue -->
   <!-- Events -->
-  <div class="py-5 bg-light" style="	box-shadow: inset 0px 0px 1000px  black;	background-image: url(&quot;https://image.winudf.com/v2/image/Y29tLnBlcnVub3YuRmFpdGhXYWxscGFwZXJfc2NyZWVuXzRfMTUzNTkyMDM5OF8wNTI/screen-4.jpg?fakeurl=1&amp;type=.jpg&quot;);	background-position: top;	background-size: 80;	background-repeat: repeat;" >
-    <div class="container">
-      <div class="row animate-in-down">
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-12 p-" style="">
-              <div class="card text-white bg-primary mb-3">
-                <div class="card-header">Passagem Bíblica</div>
-                <div class="card-body">
-                  <h5 class="card-title">Primary card title</h5>
-                  <p class="card-text"> src={{livro_vers}} Texto onde será mostrado a pesquisa da Bíblia<br><br><br><br><br><br><br></p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h5 class="text-dark" style="	text-shadow: 0px 0px 4px black;"><i class="fa fa-user fa-fw"></i><b class="text-light">Precisa de ajuda em algo especifico?</b></h5>
-                </div>
-              </div><a class="btn btn-outline-info text-light" href="#">Clique Aqui</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- Dark opaque section -->
   <!-- Footer -->
   <!-- JavaScript dependencies -->
@@ -147,6 +125,11 @@ html {
   -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+.p{
+   position: absolute;
+    left: 20px;
+    top: 20px;
+}
 @-ms-viewport {
   width: device-width; }
 

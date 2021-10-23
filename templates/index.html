@@ -28,7 +28,7 @@
           <h1 class="display-2 d-none d-md-block">Fé, Amor e Esperança</h1>
           <h1 class="display-4 d-block d-md-none">Fé, Amor e Esperança</h1>
           <p class="">Falando novamente ao povo, Jesus disse: "Eu sou a luz do mundo. Quem me segue, nunca andará em trevas, mas terá a luz da vida". João 8: 12</p>
-          <a href="#ancor_devoc" class="btn btn-outline-light btn-lg mt-1 w-75">Devocional</a><a href="/search/"  class="btn btn-lg mt-1 btn-outline-light w-75">Pesquise na Bíblia</a><a href="/temas/" class="btn btn-lg mt-1 btn-outline-light w-75">Mensagem de Esperança</a>
+          <a href="#ancor_devoc" class="btn btn-outline-light btn-lg mt-1 w-75">Devocional</a><a href="/search/"  class="btn btn-lg mt-1 btn-outline-light w-75">Pesquise na Bíblia</a><a href="/list_temas/" class="btn btn-lg mt-1 btn-outline-light w-75">Mensagem de Esperança</a>
             <div class="form-group" ><label class="ml-5 pl-3 ajuste"><br> Visualizar em modo Mobile (F12)</label></div>
         </div>
 
@@ -40,12 +40,16 @@
       <div class="row">
         <div class="col-lg-12 text-white">
           <h1 class="display-2 d-none d-md-block" style="">Fé, Amor e Esperança</h1>
-          <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
+
+            {% for dev in list_dev.items() %}
+            <div class="card"> <img class="card-img-top" src= {{ dev[1][0] }}   alt="Card">
             <div class="card-body">
-              <h4 class="card-title text-dark" id="ancor_devoc" >Título Devocional</h4>
-              <p class="card-text text-dark">TEXTO DO DEVOCIONAL QUE VAI ESTAR EM UMA LISTA&nbsp;TEXTO DO DEVOCIONAL QUE VAI ESTAR EM UMA LISTA TEXTO DO DEVOCIONAL QUE VAI ESTAR EM UMA LISTA&nbsp;TEXTO DO DEVOCIONAL QUE VAI ESTAR EM UMA LISTA</p> <a href="#" class="btn btn-primary">Voltar</a>
+              <h4 class="card-title text-dark" id="ancor_devoc" >{{ dev[1][1] }}</h4>
+              <p class="card-text text-dark"> {{ dev[1][2] }}</p> <a href="#" class="btn btn-primary">Voltar</a>
             </div>
           </div>
+          {% endfor %}
+
         </div>
       </div>
     </div>
